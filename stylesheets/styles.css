@@ -1,0 +1,96 @@
+@font-face {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: rgb(40, 45, 52);
+  color: rgb(202, 238, 255);
+  font-family: Montserrat;
+  font-size: 14px;
+  text-align: center;
+}
+
+a:link {
+  color: rgb(202, 238, 255);
+}
+
+a:visited {
+  color: rgb(202, 238, 255);
+}
+
+.main-text {
+  padding-top: 100px;
+}
+
+.logo-text {
+  background: rgb(44, 50, 60);
+  color: rgb(202, 238, 255);
+  font-size: 37px;
+  text-align: center;
+}
+
+.navbar {
+  background-color: rgb(44, 50, 60);
+  overflow: hidden;
+  text-align: center;
+}
+
+.navbar a {
+  color: rgb(202, 238, 255);
+  float: none;
+  font-size: 17px;
+  padding: 0px 16px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: rgb(202, 238, 255);
+  color: rgb(44, 50, 60);
+}
+
+.navbar .active {
+  background-color: rgb(202, 238, 255);
+  color: rgb(44, 50, 60);
+}
+
+/* stuff for minesweeper below */
+.stage {
+  height: 384px;
+  position: relative;
+  width: 720px;
+}
+
+.cell {
+  display: block;
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+
+p {
+  width: 500px;
+}
+
+.minesweeperStage {
+  /*border: 3px solid rgb(202, 238, 255);*/
+  height: 384px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 720px;
+}
+
+.minesweeperText {
+  margin-top: 30px;
+}
+
+.minesweeperGameInfo {
+  margin-top: 50px;
+}
