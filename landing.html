@@ -30,7 +30,9 @@
     firebase.auth().onAuthStateChanged(function(user) {
         if (user && user.uid != currentUid) {
             currentUid = user.uid;
-            document.body.innerHTML = '<h1> User ' + user.displayName + ' logged in </h1> <h2> //TODO add functionality </h2>'
+            document.body.innerHTML = '' +
+                '<h1> User ' + user.displayName + ' logged in </h1> ' +
+                '<h2> Upload a file by selecting the upload button.\nDownload a file by searching its name.</h2>'
         } else {
             // Sign out operation. Reset the current user UID.
             currentUid = null;
