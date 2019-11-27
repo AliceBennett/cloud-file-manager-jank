@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Jank</title>
+    <meta charset="UTF-8">
+    <link rel = "stylesheet"
+          href = "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel = "stylesheet" href = "stylesheets\styles.css">
+    <link rel = "stylesheet" href= "https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel = "icon" href = "favicon.png" type = "image/x-icon">
+</head>
+<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDmA3aUvbDBSzvCIxFY5mP74avLmuo7NW8",
+        authDomain: "cloud-file-manager-jank.firebaseapp.com",
+        databaseURL: "https://cloud-file-manager-jank.firebaseio.com",
+        projectId: "cloud-file-manager-jank",
+        storageBucket: "cloud-file-manager-jank.appspot.com",
+        messagingSenderId: "61874821339",
+        appId: "1:61874821339:web:792025f9105d21c08714fe",
+        measurementId: "G-Q7E9H5KQM8"
+    };
+    firebase.initializeApp(config);
+</script>
+<body>
+<script>
+    var currentUid = null;
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user && user.uid != currentUid) {
+            currentUid = user.uid;
+            document.body.innerHTML = '<h1> User ' + user.displayName + ' logged in </h1> <h2> //TODO add functionality </h2>'
+        } else {
+            // Sign out operation. Reset the current user UID.
+            currentUid = null;
+            console.log("no user signed in");
+        }
+    });
+</script>
+<h1>????????????</h1>
+</body>
+</html>

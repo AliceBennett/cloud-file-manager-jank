@@ -1,25 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
+<head>
+<title>Jank</title>
+<meta charset="UTF-8">
+</head>
+<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+<script>
 
-  <head>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDmA3aUvbDBSzvCIxFY5mP74avLmuo7NW8",
+    authDomain: "cloud-file-manager-jank.firebaseapp.com",
+    databaseURL: "https://cloud-file-manager-jank.firebaseio.com",
+    projectId: "cloud-file-manager-jank",
+    storageBucket: "cloud-file-manager-jank.appspot.com",
+    messagingSenderId: "61874821339",
+    appId: "1:61874821339:web:792025f9105d21c08714fe",
+    measurementId: "G-Q7E9H5KQM8"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css"/>
+<script type="text/javascript">
+  var uiConfig = {
+    signInSuccessUrl: 'landing.html',
+    signInOptions: [
+      // Specify providers you want to offer your users.
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID
+    ]
+  };
+  // Initialize the FirebaseUI Widget using Firebase.
+  var ui = new firebaseui.auth.AuthUI(firebase.auth());
+  // The start method will wait until the DOM is loaded.
+  ui.start('#firebaseui-auth-container', uiConfig);
+</script>
 
-    <meta charset="utf-8">
-    <title>Jank</title>
-    <link rel = "stylesheet"
-          href = "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
-    <link rel = "stylesheet" href = "stylesheets\styles.css">
-    <link rel = "stylesheet" href= "https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel = "icon" href = "favicon.png" type = "image/x-icon">
-  </head>
-
-  <body>
-    <script src="scripts/main.js"></script>
-    <header class = "main-head">
-      <h1 class = "logo-text">Jank</h1>
-    </header>
-
-  </body>
-
+<div></div>
+<body>
+<h1 align="center" style="color: rgb(40, 45, 52);"></h1>
+<div id="firebaseui-auth-container"></div>
+</body>
 </html>
