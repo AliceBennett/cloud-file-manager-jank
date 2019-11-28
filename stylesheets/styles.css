@@ -6,6 +6,7 @@
 
 html, body {
   height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -24,73 +25,70 @@ a:visited {
   color: rgb(202, 238, 255);
 }
 
-.main-text {
-  padding-top: 100px;
+.buttons {
+  display: inline-grid;
+  grid-column-gap: 50px;
+  margin-top: 250px;
+  width: 300px;
+  height: 125px;
 }
 
-.logo-text {
-  background: rgb(44, 50, 60);
-  color: rgb(202, 238, 255);
-  font-size: 37px;
-  text-align: center;
+.file-input {
+  display: none;
 }
 
-.navbar {
+.upload {
+  cursor: pointer;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+.upload-label {
+  cursor: pointer;
+}
+
+.upload .tooltip {
+  cursor: default;
+  visibility: hidden;
+  width: 120px;
   background-color: rgb(44, 50, 60);
-  overflow: hidden;
-  text-align: center;
-}
-
-.navbar a {
   color: rgb(202, 238, 255);
-  float: none;
-  font-size: 17px;
-  padding: 0px 16px;
   text-align: center;
-  text-decoration: none;
-}
-
-.navbar a:hover {
-  background-color: rgb(202, 238, 255);
-  color: rgb(44, 50, 60);
-}
-
-.navbar .active {
-  background-color: rgb(202, 238, 255);
-  color: rgb(44, 50, 60);
-}
-
-/* stuff for minesweeper below */
-.stage {
-  height: 384px;
-  position: relative;
-  width: 720px;
-}
-
-.cell {
-  display: block;
-  height: 24px;
+  padding: 5px 0;
+  border-radius: 6px;
   position: absolute;
-  width: 24px;
+  z-index: 1;
 }
 
-p {
-  width: 500px;
+.upload:hover .tooltip{
+  cursor: default;
+  visibility: visible;
 }
 
-.minesweeperStage {
-  /*border: 3px solid rgb(202, 238, 255);*/
-  height: 384px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-  width: 720px;
+.download {
+  cursor: pointer;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
 }
 
-.minesweeperText {
-  margin-top: 30px;
+.download .tooltip {
+  cursor: default;
+  visibility: hidden;
+  width: 120px;
+  background-color: rgb(44, 50, 60);
+  color: rgb(202, 238, 255);
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
 }
 
-.minesweeperGameInfo {
-  margin-top: 50px;
+.download:hover .tooltip{
+  cursor: default;
+  visibility: visible;
 }

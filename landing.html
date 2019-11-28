@@ -8,6 +8,7 @@
     <link rel = "stylesheet" href = "stylesheets\styles.css">
     <link rel = "stylesheet" href= "https://fonts.googleapis.com/css?family=Montserrat">
     <link rel = "icon" href = "favicon.png" type = "image/x-icon">
+    <script src="https://kit.fontawesome.com/ec03f877a6.js" crossorigin="anonymous"></script>
 </head>
 <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
 <script>
@@ -24,22 +25,8 @@
     };
     firebase.initializeApp(config);
 </script>
+<script src="scripts/loadPage.js"></script>
 <body>
-<script>
-    var currentUid = null;
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user && user.uid != currentUid) {
-            currentUid = user.uid;
-            document.body.innerHTML = '' +
-                '<h1> User ' + user.displayName + ' logged in </h1> ' +
-                '<h2> Upload a file by selecting the upload button.\nDownload a file by searching its name.</h2>'
-        } else {
-            // Sign out operation. Reset the current user UID.
-            currentUid = null;
-            console.log("no user signed in");
-        }
-    });
-</script>
-<h1>????????????</h1>
+<h1 id="h1">Please Sign In</h1>
 </body>
 </html>
