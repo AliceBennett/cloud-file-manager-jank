@@ -62,6 +62,9 @@ firebase.auth().onAuthStateChanged(function(user) {
                     case 'storage/object-not-found':
                         console.log('object not found, no download :(');
                         break;
+                    case 'storage/unauthorized':
+                        console.log('user does not have sufficient permissions, no download :(')
+                        break;
                     case 'storage/unknown':
                         console.log('unknown error, no download :(');
                         break;
